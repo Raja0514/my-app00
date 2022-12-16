@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { AppRegistry } from "react-native";
+import { Provider as PaperProvider } from "react-native-paper";
+import { name as appName } from "./app.json";
 
-export default function App() {
+import DropDown0 from "./components/Dropdown0";
+import DropDown1 from "./components/Dropdown1";
+import DropDown2 from "./components/Dropdown2";
+import Checkbox1 from "./components/Checkbox1";
+import Checkbox2 from "./components/Checkbox2";
+import Checkbox3 from "./components/Checkbox3";
+
+
+
+export default function Main() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <DropDown0/>
+    </PaperProvider>
   );
+
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+AppRegistry.registerComponent(appName, () => Main);
